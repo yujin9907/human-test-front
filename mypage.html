@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>수영조프로젝트</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="vendors/feather/feather.css">
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="images/favicon.png" />
+</head>
+
+<body class="sidebar-icon-only">
+    <!-----------------------메뉴바 토글로 디폴트----------ㄴ-->
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo.svg" class="mr-2"
+                        alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg"
+                        alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+
+                <!--------------메뉴토글---------->
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <!-------------검색창-------------->
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item nav-search d-none d-lg-block">
+                        <div class="input-group">
+                            <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                <span class="input-group-text" id="search">
+                                    <i class="icon-search"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now"
+                                aria-label="search" aria-describedby="search">
+                        </div>
+                    </li>
+                </ul>
+
+
+                <ul class="navbar-nav navbar-nav-right">
+
+
+
+                    <li class="nav-item dropdown">
+
+                        <!---------로그인 전--------->
+                        <div style="margin: 0 10px;">
+                            <button type="button" class="btn btn-primary">로그인</button>
+                            <button type="button" class="btn btn-outline-primary">회원가입</button>
+                        </div>
+
+                        <!---------로그인 후--------->
+
+                        <!-----------알림창------------>
+
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+                            data-toggle="dropdown">
+                            <i class="icon-bell mx-0"></i>
+                            <span class="count"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                            aria-labelledby="notificationDropdown">
+                            <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-success">
+                                        <i class="ti-info-alt mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        Just now
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-warning">
+                                        <i class="ti-settings mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal">Settings</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        Private message
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-info">
+                                        <i class="ti-user mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        2 days ago
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!------------로그인후 아이콘------------>
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img src="images/faces/face28.jpg" alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            <a class="dropdown-item">
+                                <i class="ti-settings text-primary"></i>
+                                MyPage
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-power-off text-primary"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+
+            </div>
+        </nav>
+
+
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+
+            <!----------네비게이션바------------->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="icon-head menu-icon"></i>
+                            <span class="menu-title">채용</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-columns menu-icon"></i>
+                            <span class="menu-title">기업</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">이력서</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false"
+                            aria-controls="icons">
+                            <i class="icon-contract menu-icon"></i>
+                            <span class="menu-title">커뮤니티</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false"
+                            aria-controls="tables">
+                            <i class="icon-grid-2 menu-icon"></i>
+                            <span class="menu-title">마이페이지</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="tables">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false"
+                            aria-controls="error">
+                            <i class="icon-ban menu-icon"></i>
+                            <span class="menu-title">Error pages</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="error">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+
+
+
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-md-12 grid-margin">
+                        </div>
+                    </div>
+                    <div class="row">
+
+
+
+                        <!---------------전체목록------------>
+                        <!-------------마진 참고 : https://minaminaworld.tistory.com/136----------->
+                        <div class="col-md-3 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="py-5 px-3 border-bottom">
+                                        <div><img class="w-100" src="샘플.jpg"></div>
+                                        <div class="text-center p-3">이메일</div>
+                                        <div class="text-center px-3">번호</div>
+                                        <div class="text-center py-4 my-3 btn-primary rounded">#백엔드 #자바</div>
+                                    </div>
+                                    <div class="py-3 px-3 border-bottom">
+                                        <div>관심있음</div>
+                                        <div>열람</div>
+                                        <div>받은 제안</div>
+                                    </div>
+                                    <div class="py-3 px-3 text-center">
+                                        <div class="btn btn-inverse-dark btn-fw">계정설정</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-9 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="m-3 text-primary">지원 현황</h4>
+                                    <div class="row bg-primary rounded m-2 p-5 text-center text-white">
+                                        <div class="col">d</div>
+                                        <div class="col">d</div>
+                                        <div class="col">d</div>
+                                        <div class="col">d</div>
+                                    </div>
+                                    <h4 class="m-3 text-primary">프로필</h4>
+                                    <div class="row bg-primary rounded m-2 p-5 text-center text-white"></div>
+                                    <h4 class="m-3 text-primary">추천</h4>
+                                    <div class="row">
+                                        <div class="col">기업</div>
+                                        <div class="col">기업</div>
+                                        <div class="col">기업</div>
+                                        <div class="col">기업</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <!-- content-wrapper ends -->
+                    <!-- partial:partials/_footer.html -->
+                    <footer class="footer">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
+                                2021. Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap
+                                    admin
+                                    template</a> from BootstrapDash.
+                                All rights reserved.</span>
+                        </div>
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed
+                                by
+                                <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
+                        </div>
+                    </footer>
+                    <!-- partial -->
+                </div>
+                <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+        </div>
+        <!-- container-scroller -->
+
+        <!-- plugins:js -->
+        <script src="vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <script src="vendors/chart.js/Chart.min.js"></script>
+        <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+        <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+        <script src="js/dataTables.select.min.js"></script>
+
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="js/off-canvas.js"></script>
+        <script src="js/hoverable-collapse.js"></script>
+        <script src="js/template.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/todolist.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="js/dashboard.js"></script>
+        <script src="js/Chart.roundedBarCharts.js"></script>
+        <!-- End custom js for this page-->
+</body>
+
+</html>
